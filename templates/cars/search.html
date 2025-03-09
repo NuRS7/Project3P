@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поиск машин</title>
+</head>
+<body>
+    <h1>Поиск машин</h1>
+    <form method="get" action="/cars/search">
+        <input type="text" name="car_name" value="{{ car_name }}" placeholder="Введите название">
+        <button type="submit">Поиск</button>
+    </form>
+    <ul>
+        {% for car in cars %}
+            <li>{{ car.name }} ({{ car.year }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
